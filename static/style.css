@@ -1,0 +1,151 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ff9ec4,#ffd6e8,#fff0f5);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.container{
+    width:700px;
+    text-align:center;
+    background:white;
+    padding:50px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+
+h1{
+    color:#ff2e7a;
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+h2{
+    color:#444;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:20px;
+    margin-bottom:35px;
+    color:#666;
+}
+
+button{
+    background:#ff2e7a;
+    color:white;
+    padding:18px 40px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:20px;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+    background:#ff0066;
+}
+
+.food-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+.food-card{
+    background:white;
+    color:#ff2e7a;
+    border:2px solid #ff2e7a;
+    border-radius:20px;
+    font-size:22px;
+    padding:25px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.food-card:hover{
+    background:#ff2e7a;
+    color:white;
+    transform:scale(1.08);
+}
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.hearts span{
+    position:absolute;
+    bottom:-100px;
+    font-size:30px;
+    animation:floatHeart 12s linear infinite;
+}
+
+.hearts span:nth-child(1){left:10%;animation-delay:0s;}
+.hearts span:nth-child(2){left:25%;animation-delay:2s;}
+.hearts span:nth-child(3){left:45%;animation-delay:4s;}
+.hearts span:nth-child(4){left:65%;animation-delay:6s;}
+.hearts span:nth-child(5){left:80%;animation-delay:8s;}
+.hearts span:nth-child(6){left:90%;animation-delay:10s;}
+
+@keyframes floatHeart{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+#musicBtn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+
+    background:#ff2d75;
+    color:white;
+
+    border:none;
+    padding:12px 22px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+    transition:.3s;
+}
+
+#musicBtn:hover{
+    transform:scale(1.08);
+}
+
+body{
+    cursor:url("https://cur.cursors-4u.net/symbols/sym-1/sym46.cur"),auto;
+}

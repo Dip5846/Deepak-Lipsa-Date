@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You ❤️</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>❤️ Thank You, Lipsa ❤️</h1>
+
+    <h2>You Made My Day! 🌹</h2>
+
+    <p>
+        Thank you for saying <b>YES</b> to spending time together.
+    </p>
+
+    <p><b>📅 Date:</b> {{ selected_date }}</p>
+
+    <p><b>🍽️ Plan:</b> {{ selected_food }}</p>
+
+    <hr>
+
+    <p style="font-size:22px;color:#ff2d75;">
+        Looking forward to creating beautiful memories together. ❤️
+    </p>
+
+    <h2>— Deepak 🌹</h2>
+
+</div>
+
+<script>
+confetti({
+    particleCount:250,
+    spread:180,
+    origin:{y:0.6}
+});
+</script>
+<footer style="text-align:center;padding:20px;color:white;">
+Made with ❤️ by Deepak
+</footer>
+</body>
+</html>

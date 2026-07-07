@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Our Date ❤️</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🍽️ Choose Our Date</h1>
+
+    <h3>Your Selected Date</h3>
+    <h2>{{ selected_date }}</h2>
+
+    <form action="/success" method="POST">
+
+        <input type="hidden" name="date" value="{{ selected_date }}">
+
+        <div class="food-grid">
+
+            <button class="food-card" type="submit" name="food" value="Pizza 🍕">
+                🍕
+                <br>Pizza
+            </button>
+
+            <button class="food-card" type="submit" name="food" value="Burger 🍔">
+                🍔
+                <br>Burger
+            </button>
+
+            <button class="food-card" type="submit" name="food" value="Cafe ☕">
+                ☕
+                <br>Cafe
+            </button>
+
+            <button class="food-card" type="submit" name="food" value="Movie 🎬">
+                🎬
+                <br>Movie
+            </button>
+
+            <button class="food-card" type="submit" name="food" value="Dessert 🍰">
+                🍰
+                <br>Dessert
+            </button>
+
+            <button class="food-card" type="submit" name="food" value="Ice Cream 🍦">
+                🍦
+                <br>Ice Cream
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+<div class="hearts">
+    <span>❤️</span>
+    <span>💖</span>
+    <span>💕</span>
+    <span>💗</span>
+    <span>🌹</span>
+    <span>❤️</span>
+</div>
+<audio id="bgMusic" loop>
+    <source src="{{ url_for('static', filename='music/perfect.mp3') }}" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn" onclick="toggleMusic()">
+    🎵 Play Music
+</button>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<footer style="text-align:center;padding:20px;color:white;">
+Made with ❤️ by Deepak
+</footer>
+</body>
+</html>

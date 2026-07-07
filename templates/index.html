@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Deepak ❤️ Lipsa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>❤️ Deepak & Lipsa ❤️</h1>
+
+<h2>Welcome Lipsa 🌹</h2>
+
+<p>
+Every love story is beautiful,
+but I hope ours becomes my favorite.
+</p>
+
+<form action="/date" method="POST">
+<button type="submit">
+Start Our Journey ❤️
+</button>
+</form>
+
+</div>
+<div class="hearts">
+    <span>❤️</span>
+    <span>💖</span>
+    <span>💕</span>
+    <span>💗</span>
+    <span>🌹</span>
+    <span>❤️</span>
+</div>
+<audio id="bgMusic" loop>
+    <source src="{{ url_for('static', filename='music/perfect.mp3') }}" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn" onclick="toggleMusic()">
+    🎵 Play Music
+</button>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<footer style="text-align:center;padding:20px;color:white;">
+Made with ❤️ by Deepak
+</footer>
+</body>
+</html>
