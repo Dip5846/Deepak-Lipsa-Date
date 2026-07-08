@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request
-import os
+from flask import Flask, render_template, request, jsonify
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -7,37 +7,19 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-@app.route("/date", methods=["POST"])
-def date():
-    return render_template("date.html")
-
-@app.route("/food", methods=["POST"])
-def food():
-    selected_date = request.form.get("date")
-    return render_template("food.html", selected_date=selected_date)
-
-from datetime import datetime
-
 @app.route("/success", methods=["POST"])
 def success():
 
-    selected_date = request.form["date"]
-    selected_food = request.form["food"]
+    data = request.get_json()
 
     with open("responses.txt", "a", encoding="utf-8") as file:
-        file.write("====================================\n")
+        file.write("=================================\n")
         file.write(f"Time : {datetime.now()}\n")
-        file.write("Name : Lipsa\n")
-        file.write(f"Date : {selected_date}\n")
-        file.write(f"Food : {selected_food}\n")
-        file.write("====================================\n\n")
+        file.write(f"Date : {data['date']}\n")
+        file.write(f"Food : {data['food']}\n")
+        file.write("=================================\n\n")
 
-    return render_template(
-        "success.html",
-        selected_date=selected_date,
-        selected_food=selected_food
-    )
+    return jsonify({"status": "success"})
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    app.run(debug=True)

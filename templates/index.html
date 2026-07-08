@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deepak ❤️ Lipsa</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
@@ -9,41 +12,100 @@
 
 <div class="container">
 
-<h1>❤️ Deepak & Lipsa ❤️</h1>
+    <!-- Welcome -->
+    <section id="welcome" class="page active">
+        <h1>❤️ Deepak & Lipsa ❤️</h1>
+        <p>Every love story is beautiful, but I hope ours becomes my favorite. 🌹</p>
 
-<h2>Welcome Lipsa 🌹</h2>
+        <button onclick="startJourney()">
+            Start Our Journey ❤️
+        </button>
+    </section>
 
-<p>
-Every love story is beautiful,
-but I hope ours becomes my favorite.
-</p>
+    <!-- Proposal -->
+    <section id="love" class="page">
 
-<form action="/date" method="POST">
-<button type="submit">
-Start Our Journey ❤️
-</button>
-</form>
+        <h1>💕 Will You Love Me Forever? 💕</h1>
+
+        <div class="btn-group">
+            <button onclick="showPage('date')">
+                YES ❤️
+            </button>
+
+            <button id="noBtn">
+                NO 😜
+            </button>
+        </div>
+
+    </section>
+
+    <!-- Date -->
+    <section id="date" class="page">
+
+        <h2>📅 Select Our Date</h2>
+
+        <input type="date" id="dateValue">
+
+        <br><br>
+
+        <button onclick="showPage('food')">
+            Next ❤️
+        </button>
+
+    </section>
+
+    <!-- Food -->
+    <section id="food" class="page">
+
+        <h2>🍕 Choose Our Date Food 😋</h2>
+
+        <div class="food-grid">
+
+            <button onclick="finish('Pizza 🍕')">🍕 Pizza</button>
+
+            <button onclick="finish('Burger 🍔')">🍔 Burger</button>
+
+            <button onclick="finish('Biryani 🍛')">🍛 Biryani</button>
+
+            <button onclick="finish('Ice Cream 🍨')">🍨 Ice Cream</button>
+
+        </div>
+
+    </section>
+
+    <!-- Thank You -->
+    <section id="thanks" class="page">
+
+        <h1>❤️ Thank You Lipsa ❤️</h1>
+
+        <p id="summary"></p>
+
+        <h2>I Can't Wait For Our Date 🌹</h2>
+
+    </section>
 
 </div>
+
+<!-- Floating Hearts -->
 <div class="hearts">
     <span>❤️</span>
     <span>💖</span>
     <span>💕</span>
-    <span>💗</span>
     <span>🌹</span>
+    <span>💘</span>
     <span>❤️</span>
 </div>
+
+<!-- Background Music -->
 <audio id="bgMusic" loop>
     <source src="{{ url_for('static', filename='music/perfect.mp3') }}" type="audio/mpeg">
 </audio>
 
-<button id="musicBtn" onclick="toggleMusic()">
-    🎵 Play Music
-</button>
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+<!-- Your Script -->
 <script src="{{ url_for('static', filename='script.js') }}"></script>
-<footer style="text-align:center;padding:20px;color:white;">
-Made with ❤️ by Deepak
-</footer>
+
 </body>
 </html>
