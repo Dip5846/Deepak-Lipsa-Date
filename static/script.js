@@ -11,6 +11,18 @@ function showPage(id) {
     document.getElementById(id).classList.add("active");
 }
 
+function validateDate() {
+
+    const date = document.getElementById("dateValue").value;
+
+    if (date === "") {
+        alert("📅 Please select a date before continuing.");
+        return;
+    }
+
+    showPage("food");
+}
+
 function startJourney() {
     music.play().catch(() => {
         console.log("Autoplay blocked until user interaction.");
